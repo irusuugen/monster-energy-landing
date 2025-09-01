@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme inline {
+    --font-heading: var(--font-khand);
+    --font-body: var(--font-switzer);
+}
+
+@theme {
+    --animate-slide-left: slide-left 3s linear infinite;
+}
+
+@keyframes slide-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
