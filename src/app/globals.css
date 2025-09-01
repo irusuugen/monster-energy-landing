@@ -2,7 +2,7 @@
 
 @theme inline {
     --font-heading: var(--font-khand);
-    --font-body: var(--font-switzer);
+    --font-body: var(--font-clashdisplay);
 }
 
 @theme {

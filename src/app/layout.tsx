@@ -12,11 +12,11 @@ const Khand = localFont({
   variable: "--font-khand"
 })
 
-const Switzer= localFont({
-  src: '../../public/fonts/Switzer-Variable.woff2',
+const ClashDisplay= localFont({
+  src: '../../public/fonts/ClashDisplay-Variable.woff2',
   display: 'swap',
   weight: "100 900",
-  variable: "--font-switzer"
+  variable: "--font-clashdisplay"
 })
 
 export default function RootLayout({
@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${Khand.variable}`}>
-      <body className="overflow-x-hidden bg-[#020202]">
+    <html lang="en" className={`${Khand.variable} ${ClashDisplay.variable}`}>
+      <body className="overflow-x-hidden bg-[#020202] text-[#DAD7CD] font-body">
         <Header />
         <main>
         {children}
