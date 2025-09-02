@@ -4,6 +4,7 @@ import { repositoryName } from "@/prismicio";
 
 import "./globals.css";
 import Header from "@/components/Header";
+import ViewCanvas from "@/components/ViewCanvas";
 
 const Khand = localFont({
   src: '../../public/fonts/Khand-Variable.woff2',
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Header />
         <main>
         {children}
+        <ViewCanvas/>
         </main>
       </body>
       <PrismicPreview repositoryName={repositoryName} />
