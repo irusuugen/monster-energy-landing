@@ -1,15 +1,24 @@
 "use client"
 
-import React from 'react'
+import React, { Suspense } from 'react'
 import {Canvas} from "@react-three/fiber"
 import { MonsterCan } from './MonsterCan'
 import { Environment, Float, View } from '@react-three/drei'
 import FloatingCan from './FloatingCan'
 
+import dynamic from "next/dynamic";
+
+const Loader = dynamic(
+    () => import ("@react-three/drei").then((mod)=>mod.Loader), {
+        ssr: false
+    },
+)
+
 type Props = {}
 
 export default function ViewCanvas({}: Props) {
   return (
+    <>
     <Canvas
         style={{
             position: "fixed",
@@ -27,7 +36,11 @@ export default function ViewCanvas({}: Props) {
         gl={{antialias: true}}
         shadows
     >   
-        <View.Port/>
+        <Suspense fallback={null}>
+            <View.Port/>
+        </Suspense>
     </Canvas>
+    <Loader/>
+    </>
   )
 }
